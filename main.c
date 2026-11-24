@@ -1,37 +1,40 @@
 #include <stdio.h>
+#include "minhabib.h"
+
 int main(void)
- 
-int qtd ;
-int opcao;
-int banco_aberto = 0;
-int numero;
-
 {
-    for (opcao = 0; opcao != 4)
-    {
-        printf("\n=====carteira digital=====\n");
-        printf("1-abrir o banco\n");
-        printf("2-consultar historico\n");
-        printf("3-sair\n");
-        printf("4-sorteio\n");
-        printf("escolha uma opcao: ");
-        scanf("%d", &opcao); 
+    int opcao = 0;
 
-        opcao=(lerint("escolha uma opcao: "));                                      
+    while (opcao != 3)
+    {
+        menubanco();
+        opcao = lerint("escolha uma opcao: ");
 
         switch (opcao)
         {
         case 1:
-            printf("abrindo o banco...\n");
+            abrirbanco();
             break;
         case 2:
-            printf("consultando historico...\n");
+            consultar_historico();
             break;
         case 3:
             printf("saindo...\n");
             break;
         case 4:
-            printf("sorteando...\n");
+            efetuarsorteio();
+            break;
+        case 5:
+            cadastrar_cliente();
+            break;
+        case 6:
+            abrir_conta();
+            break;
+        case 7:
+            depositar();
+            break;
+        case 8:
+            solicitar_emprestimo();
             break;
         default:
             printf("opcao invalida!\n");
@@ -40,4 +43,3 @@ int numero;
     }
     return 0;
 }
-
